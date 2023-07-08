@@ -1,0 +1,180 @@
+2023-07-08T19:15:14.994+0200 INFO Starting BankApplication using Java 17.0.6 with PID 13484 (D:\My_final_project\Bank-application\target\classes started by sanch in D:\My_final_project\Bank-application)
+2023-07-08T19:15:15.013+0200 INFO No active profile set, falling back to 1 default profile: "default"
+2023-07-08T19:15:15.920+0200 INFO Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-08T19:15:15.981+0200 INFO Finished Spring Data repository scanning in 50 ms. Found 1 JPA repository interfaces.
+2023-07-08T19:15:16.729+0200 INFO Tomcat initialized with port(s): 8080 (http)
+2023-07-08T19:15:16.737+0200 INFO Initializing ProtocolHandler ["http-nio-8080"]
+2023-07-08T19:15:16.741+0200 INFO Starting service [Tomcat]
+2023-07-08T19:15:16.741+0200 INFO Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-07-08T19:15:16.866+0200 INFO Initializing Spring embedded WebApplicationContext
+2023-07-08T19:15:16.868+0200 INFO Root WebApplicationContext: initialization completed in 1790 ms
+2023-07-08T19:15:17.159+0200 INFO HikariPool-1 - Starting...
+2023-07-08T19:15:17.415+0200 INFO HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5b02a984
+2023-07-08T19:15:17.416+0200 INFO HikariPool-1 - Start completed.
+2023-07-08T19:15:17.466+0200 INFO HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-08T19:15:17.508+0200 INFO HHH000412: Hibernate ORM core version 6.2.5.Final
+2023-07-08T19:15:17.510+0200 INFO HHH000406: Using bytecode reflection optimizer
+2023-07-08T19:15:17.758+0200 INFO HHH000021: Bytecode provider name : bytebuddy
+2023-07-08T19:15:17.913+0200 INFO No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-07-08T19:15:18.134+0200 INFO HHH000021: Bytecode provider name : bytebuddy
+2023-07-08T19:15:18.638+0200 INFO HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-08T19:15:18.640+0200 INFO Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-08T19:15:18.855+0200 INFO Создан экземпляр класса AccountRepository.
+2023-07-08T19:15:19.216+0200 INFO Tomcat started on port(s): 8080 (http) with context path ''
+2023-07-08T19:15:19.226+0200 INFO Started BankApplication in 4.768 seconds (process running for 5.26)
+2023-07-08T19:15:19.251+0200 INFO Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-08T19:15:19.254+0200 INFO HikariPool-1 - Shutdown initiated...
+2023-07-08T19:15:19.258+0200 INFO HikariPool-1 - Shutdown completed.
+2023-07-08T19:15:21.755+0200 INFO Starting BankApplication using Java 17.0.6 with PID 30192 (D:\My_final_project\Bank-application\target\classes started by sanch in D:\My_final_project\Bank-application)
+2023-07-08T19:15:21.785+0200 INFO No active profile set, falling back to 1 default profile: "default"
+2023-07-08T19:15:22.742+0200 INFO Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-08T19:15:22.809+0200 INFO Finished Spring Data repository scanning in 56 ms. Found 1 JPA repository interfaces.
+2023-07-08T19:15:23.691+0200 INFO Tomcat initialized with port(s): 8080 (http)
+2023-07-08T19:15:23.703+0200 INFO Initializing ProtocolHandler ["http-nio-8080"]
+2023-07-08T19:15:23.708+0200 INFO Starting service [Tomcat]
+2023-07-08T19:15:23.709+0200 INFO Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-07-08T19:15:23.820+0200 INFO Initializing Spring embedded WebApplicationContext
+2023-07-08T19:15:23.822+0200 INFO Root WebApplicationContext: initialization completed in 1981 ms
+2023-07-08T19:15:24.100+0200 INFO HikariPool-1 - Starting...
+2023-07-08T19:15:24.349+0200 INFO HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2db86a7c
+2023-07-08T19:15:24.356+0200 INFO HikariPool-1 - Start completed.
+2023-07-08T19:15:24.429+0200 INFO HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-08T19:15:24.467+0200 INFO HHH000412: Hibernate ORM core version 6.2.5.Final
+2023-07-08T19:15:24.469+0200 INFO HHH000406: Using bytecode reflection optimizer
+2023-07-08T19:15:24.678+0200 INFO HHH000021: Bytecode provider name : bytebuddy
+2023-07-08T19:15:24.811+0200 INFO No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-07-08T19:15:25.115+0200 INFO HHH000021: Bytecode provider name : bytebuddy
+2023-07-08T19:15:25.614+0200 INFO HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-08T19:15:25.616+0200 INFO Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-08T19:15:25.851+0200 INFO Создан экземпляр класса AccountRepository.
+2023-07-08T19:15:26.179+0200 INFO Starting ProtocolHandler ["http-nio-8080"]
+2023-07-08T19:15:26.197+0200 INFO Tomcat started on port(s): 8080 (http) with context path ''
+2023-07-08T19:15:26.207+0200 INFO Started BankApplication in 5.003 seconds (process running for 5.635)
+2023-07-08T20:31:00.340+0200 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h11m11s453ms503µs200ns).
+2023-07-08T20:39:57.731+0200 INFO Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-08T20:39:57.735+0200 INFO HikariPool-1 - Shutdown initiated...
+2023-07-08T20:39:57.739+0200 INFO HikariPool-1 - Shutdown completed.
+2023-07-08T20:40:03.056+0200 INFO Starting BankApplication using Java 17.0.6 with PID 22828 (D:\My_final_project\Bank-application\target\classes started by sanch in D:\My_final_project\Bank-application)
+2023-07-08T20:40:03.076+0200 INFO No active profile set, falling back to 1 default profile: "default"
+2023-07-08T20:40:03.948+0200 INFO Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-08T20:40:04.025+0200 INFO Finished Spring Data repository scanning in 60 ms. Found 1 JPA repository interfaces.
+2023-07-08T20:40:04.812+0200 INFO Tomcat initialized with port(s): 8080 (http)
+2023-07-08T20:40:04.828+0200 INFO Initializing ProtocolHandler ["http-nio-8080"]
+2023-07-08T20:40:04.831+0200 INFO Starting service [Tomcat]
+2023-07-08T20:40:04.831+0200 INFO Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-07-08T20:40:04.947+0200 INFO Initializing Spring embedded WebApplicationContext
+2023-07-08T20:40:04.948+0200 INFO Root WebApplicationContext: initialization completed in 1829 ms
+2023-07-08T20:40:05.177+0200 INFO HikariPool-1 - Starting...
+2023-07-08T20:40:05.386+0200 INFO HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@48cd319d
+2023-07-08T20:40:05.394+0200 INFO HikariPool-1 - Start completed.
+2023-07-08T20:40:05.469+0200 INFO HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-08T20:40:05.535+0200 INFO HHH000412: Hibernate ORM core version 6.2.5.Final
+2023-07-08T20:40:05.537+0200 INFO HHH000406: Using bytecode reflection optimizer
+2023-07-08T20:40:05.742+0200 INFO HHH000021: Bytecode provider name : bytebuddy
+2023-07-08T20:40:05.898+0200 INFO No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-07-08T20:40:06.149+0200 INFO HHH000021: Bytecode provider name : bytebuddy
+2023-07-08T20:40:06.678+0200 INFO HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-08T20:40:06.680+0200 INFO Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-08T20:40:06.902+0200 INFO Создан экземпляр класса AccountRepository.
+2023-07-08T20:40:06.955+0200 WARN spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-08T20:40:07.292+0200 INFO Starting ProtocolHandler ["http-nio-8080"]
+2023-07-08T20:40:07.325+0200 INFO Tomcat started on port(s): 8080 (http) with context path ''
+2023-07-08T20:40:07.335+0200 INFO Started BankApplication in 4.857 seconds (process running for 5.536)
+2023-07-08T20:40:25.777+0200 INFO Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-08T20:40:25.780+0200 INFO HikariPool-1 - Shutdown initiated...
+2023-07-08T20:40:25.783+0200 INFO HikariPool-1 - Shutdown completed.
+2023-07-08T20:40:29.149+0200 INFO Starting BankApplication using Java 17.0.6 with PID 24560 (D:\My_final_project\Bank-application\target\classes started by sanch in D:\My_final_project\Bank-application)
+2023-07-08T20:40:29.170+0200 INFO No active profile set, falling back to 1 default profile: "default"
+2023-07-08T20:40:29.921+0200 INFO Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-08T20:40:29.989+0200 INFO Finished Spring Data repository scanning in 59 ms. Found 1 JPA repository interfaces.
+2023-07-08T20:40:30.728+0200 INFO Tomcat initialized with port(s): 8080 (http)
+2023-07-08T20:40:30.737+0200 INFO Initializing ProtocolHandler ["http-nio-8080"]
+2023-07-08T20:40:30.739+0200 INFO Starting service [Tomcat]
+2023-07-08T20:40:30.739+0200 INFO Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-07-08T20:40:30.844+0200 INFO Initializing Spring embedded WebApplicationContext
+2023-07-08T20:40:30.847+0200 INFO Root WebApplicationContext: initialization completed in 1623 ms
+2023-07-08T20:40:31.117+0200 INFO HikariPool-1 - Starting...
+2023-07-08T20:40:31.305+0200 INFO HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2db86a7c
+2023-07-08T20:40:31.307+0200 INFO HikariPool-1 - Start completed.
+2023-07-08T20:40:31.355+0200 INFO HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-08T20:40:31.395+0200 INFO HHH000412: Hibernate ORM core version 6.2.5.Final
+2023-07-08T20:40:31.397+0200 INFO HHH000406: Using bytecode reflection optimizer
+2023-07-08T20:40:31.630+0200 INFO HHH000021: Bytecode provider name : bytebuddy
+2023-07-08T20:40:31.776+0200 INFO No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-07-08T20:40:32.025+0200 INFO HHH000021: Bytecode provider name : bytebuddy
+2023-07-08T20:40:32.504+0200 INFO HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-08T20:40:32.507+0200 INFO Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-08T20:40:32.707+0200 INFO Создан экземпляр класса AccountRepository.
+2023-07-08T20:40:33.034+0200 INFO Starting ProtocolHandler ["http-nio-8080"]
+2023-07-08T20:40:33.051+0200 INFO Tomcat started on port(s): 8080 (http) with context path ''
+2023-07-08T20:40:33.060+0200 INFO Started BankApplication in 4.474 seconds (process running for 5.089)
+2023-07-08T20:40:45.827+0200 INFO Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-08T20:40:45.827+0200 INFO Initializing Servlet 'dispatcherServlet'
+2023-07-08T20:40:45.827+0200 INFO Completed initialization in 0 ms
+2023-07-08T20:44:50.093+0200 INFO Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-08T20:44:50.097+0200 INFO HikariPool-1 - Shutdown initiated...
+2023-07-08T20:44:50.104+0200 INFO HikariPool-1 - Shutdown completed.
+2023-07-08T20:45:04.186+0200 INFO Starting BankApplication using Java 17.0.6 with PID 19868 (D:\My_final_project\Bank-application\target\classes started by sanch in D:\My_final_project\Bank-application)
+2023-07-08T20:45:04.201+0200 INFO No active profile set, falling back to 1 default profile: "default"
+2023-07-08T20:45:05.100+0200 INFO Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-08T20:45:05.155+0200 INFO Finished Spring Data repository scanning in 47 ms. Found 1 JPA repository interfaces.
+2023-07-08T20:45:05.851+0200 INFO Tomcat initialized with port(s): 8080 (http)
+2023-07-08T20:45:05.860+0200 INFO Initializing ProtocolHandler ["http-nio-8080"]
+2023-07-08T20:45:05.863+0200 INFO Starting service [Tomcat]
+2023-07-08T20:45:05.863+0200 INFO Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-07-08T20:45:05.959+0200 INFO Initializing Spring embedded WebApplicationContext
+2023-07-08T20:45:05.961+0200 INFO Root WebApplicationContext: initialization completed in 1705 ms
+2023-07-08T20:45:06.164+0200 INFO HikariPool-1 - Starting...
+2023-07-08T20:45:06.400+0200 INFO HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6aa7e176
+2023-07-08T20:45:06.402+0200 INFO HikariPool-1 - Start completed.
+2023-07-08T20:45:06.464+0200 INFO HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-08T20:45:06.506+0200 INFO HHH000412: Hibernate ORM core version 6.2.5.Final
+2023-07-08T20:45:06.510+0200 INFO HHH000406: Using bytecode reflection optimizer
+2023-07-08T20:45:06.705+0200 INFO HHH000021: Bytecode provider name : bytebuddy
+2023-07-08T20:45:06.859+0200 INFO No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-07-08T20:45:07.125+0200 INFO HHH000021: Bytecode provider name : bytebuddy
+2023-07-08T20:45:07.582+0200 INFO HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-08T20:45:07.584+0200 INFO Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-08T20:45:07.792+0200 INFO Создан экземпляр класса AccountRepository.
+2023-07-08T20:45:08.116+0200 INFO Starting ProtocolHandler ["http-nio-8080"]
+2023-07-08T20:45:08.135+0200 INFO Tomcat started on port(s): 8080 (http) with context path ''
+2023-07-08T20:45:08.144+0200 INFO Started BankApplication in 4.503 seconds (process running for 5.11)
+2023-07-08T20:45:14.961+0200 INFO Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-08T20:45:14.961+0200 INFO Initializing Servlet 'dispatcherServlet'
+2023-07-08T20:45:14.962+0200 INFO Completed initialization in 1 ms
+2023-07-08T20:45:14.996+0200 INFO Вызван метод getBalance с id = 200
+2023-07-08T20:45:47.202+0200 INFO Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-08T20:45:47.204+0200 INFO HikariPool-1 - Shutdown initiated...
+2023-07-08T20:45:47.208+0200 INFO HikariPool-1 - Shutdown completed.
+2023-07-08T20:47:47.444+0200 INFO Starting BankApplication using Java 17.0.6 with PID 14236 (D:\My_final_project\Bank-application\target\classes started by sanch in D:\My_final_project\Bank-application)
+2023-07-08T20:47:47.473+0200 INFO No active profile set, falling back to 1 default profile: "default"
+2023-07-08T20:47:48.320+0200 INFO Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-08T20:47:48.390+0200 INFO Finished Spring Data repository scanning in 62 ms. Found 1 JPA repository interfaces.
+2023-07-08T20:47:49.135+0200 INFO Tomcat initialized with port(s): 8080 (http)
+2023-07-08T20:47:49.144+0200 INFO Initializing ProtocolHandler ["http-nio-8080"]
+2023-07-08T20:47:49.146+0200 INFO Starting service [Tomcat]
+2023-07-08T20:47:49.147+0200 INFO Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-07-08T20:47:49.248+0200 INFO Initializing Spring embedded WebApplicationContext
+2023-07-08T20:47:49.250+0200 INFO Root WebApplicationContext: initialization completed in 1718 ms
+2023-07-08T20:47:49.554+0200 INFO HikariPool-1 - Starting...
+2023-07-08T20:47:49.770+0200 INFO HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6aa7e176
+2023-07-08T20:47:49.777+0200 INFO HikariPool-1 - Start completed.
+2023-07-08T20:47:49.833+0200 INFO HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-08T20:47:49.872+0200 INFO HHH000412: Hibernate ORM core version 6.2.5.Final
+2023-07-08T20:47:49.874+0200 INFO HHH000406: Using bytecode reflection optimizer
+2023-07-08T20:47:50.112+0200 INFO HHH000021: Bytecode provider name : bytebuddy
+2023-07-08T20:47:50.251+0200 INFO No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-07-08T20:47:50.514+0200 INFO HHH000021: Bytecode provider name : bytebuddy
+2023-07-08T20:47:51.009+0200 INFO HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-08T20:47:51.011+0200 INFO Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-08T20:47:51.203+0200 INFO Создан экземпляр класса AccountRepository.
+2023-07-08T20:47:51.538+0200 INFO Starting ProtocolHandler ["http-nio-8080"]
+2023-07-08T20:47:51.554+0200 INFO Tomcat started on port(s): 8080 (http) with context path ''
+2023-07-08T20:47:51.562+0200 INFO Started BankApplication in 4.672 seconds (process running for 5.252)
+2023-07-08T20:48:02.750+0200 INFO Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-08T20:48:02.750+0200 INFO Initializing Servlet 'dispatcherServlet'
+2023-07-08T20:48:02.751+0200 INFO Completed initialization in 1 ms
+2023-07-08T20:48:02.782+0200 INFO Вызван метод getBalance с id = 200
+2023-07-08T20:48:05.331+0200 INFO Вызван метод takeMoney с id = 200 и запрашиваемой суммой = 10
+2023-07-08T20:48:09.517+0200 INFO Вызван метод putMoney с id = 200 и запрашиваемой суммой = 10
+2023-07-08T20:48:11.763+0200 INFO Вызван метод getBalance с id = 200
