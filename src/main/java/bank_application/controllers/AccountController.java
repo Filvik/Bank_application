@@ -2,6 +2,8 @@ package bank_application.controllers;
 
 import bank_application.model.BalanceResponse;
 import bank_application.service.BankService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import lombok.RequiredArgsConstructor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,19 +19,24 @@ public class AccountController {
     private static final Logger log = LogManager.getLogger(BankService.class);
 
     @GetMapping(value = "/getBalance_for_id/{id}")
-    public BalanceResponse getBalance(@PathVariable("id") long id) {
+    @Operation(summary = "Запрос баланса", tags = "Контроллер получение баланса")
+    public BalanceResponse getBalance(@PathVariable@Parameter(description = "Идентификатор пользователя") long id) {
         log.info("Вызван метод getBalance с id = "+ id);
         return bankService.howMuchMoney(id);
     }
 
     @PutMapping(value = "/takeMoney_for_id/{id}/{sum}")
-    public BalanceResponse takeMoney(@PathVariable("id") long id , @PathVariable("sum") BigDecimal sum) {
+    @Operation(summary = "Запрос на снятие", tags = "Контроллер запроса суммы на снятие")
+    public BalanceResponse takeMoney(@PathVariable@Parameter(description = "Идентификатор пользователя") long id ,
+                                     @PathVariable@Parameter(description = "Сумма") BigDecimal sum) {
         log.info("Вызван метод takeMoney с id = "+ id + " и запрашиваемой суммой = " + sum);
         return bankService.takeMoney(id,sum);
     }
 
-    @PutMapping(value = "/putMoney_for_id/{id}/{sum}")
-    public BalanceResponse putMoney(@PathVariable("id") long id , @PathVariable("sum") BigDecimal sum) {
+    @RequestMapping(value = "/putMoney_for_id/{id}/{sum}", method = RequestMethod.PUT)
+    @Operation(summary = "Запрос на пополнение", tags = "Контроллер пополнения счета")
+    public BalanceResponse putMoney(@PathVariable@Parameter(description = "Идентификатор пользователя") long id ,
+                                    @PathVariable@Parameter(description = "Сумма") BigDecimal sum) {
         log.info("Вызван метод putMoney с id = "+ id + " и запрашиваемой суммой = " + sum);
         return bankService.putMoney(id,sum);
     }
