@@ -1,4 +1,4 @@
-package bank_application.controllers;
+package bank_application.controller;
 
 import bank_application.model.BalanceResponse;
 import bank_application.service.BankService;

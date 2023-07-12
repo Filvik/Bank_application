@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 
 @Data
 @Entity
-@Table(name = "Account")
+@Table(name = "ACCOUNT")
 @Schema(name = "Аккаунт пользователя")
 public class AccountEntity {
 
@@ -16,11 +16,11 @@ public class AccountEntity {
     @Schema(description = "Идентификатор")
     private Long id;
 
-    @Column(name = "Balance")
+    @Column(name = "BALANCE")
     @Schema(description = "Баланс")
     private BigDecimal balance;
 
-    @Column(name = "Type_currency")
+    @Column(name = "TYPE_CURRENCY")
     @Schema(description = "Тип валюты")
     private String type_currency;
 
