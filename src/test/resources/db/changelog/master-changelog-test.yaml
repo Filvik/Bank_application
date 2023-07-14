@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - include:
+      # v.1.0 таблица account
+      file: db/changelog/changelog/v1/v1.0.sql
