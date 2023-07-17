@@ -22,7 +22,7 @@ public class AccountEntity {
 
     @Column(name = "TYPE_CURRENCY")
     @Schema(description = "Тип валюты")
-    private String type_currency;
+    private String typeCurrency;
 
     public AccountEntity() {
     }
