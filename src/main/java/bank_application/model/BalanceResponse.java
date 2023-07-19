@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 @Schema(name = "Ответа на запрос")
 public class BalanceResponse {
     @JsonProperty("value")
-    @Schema(description = "При запросе баланса - величина баланса, при других операциях - значения результативности операции.")
+    @Schema(description = "При запросе баланса - величина баланса, при других операциях - значения результативности операции")
     private BigDecimal value;
     @JsonProperty("description_error")
     @Schema(description = "Текст возникшей ошибки")
@@ -30,5 +30,7 @@ public class BalanceResponse {
     }
     public BalanceResponse(BigDecimal value) {
         this.value = value;
+    }
+    public BalanceResponse() {
     }
 }

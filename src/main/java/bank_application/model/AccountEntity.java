@@ -16,13 +16,13 @@ public class AccountEntity {
     @Schema(description = "Идентификатор")
     private Long id;
 
-    @Column(name = "BALANCE")
+    @Column(name = "BALANCE", nullable = false)
     @Schema(description = "Баланс")
     private BigDecimal balance;
 
-    @Column(name = "TYPE_CURRENCY")
+    @Column(name = "TYPE_CURRENCY", nullable = false)
     @Schema(description = "Тип валюты")
-    private String type_currency;
+    private String typeCurrency;
 
     public AccountEntity() {
     }
