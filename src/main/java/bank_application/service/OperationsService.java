@@ -7,14 +7,13 @@ import bank_application.repository.OperationsRepository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class OperationsService {
 
-    private static final Logger log = LogManager.getLogger(BankService.class);
+    private static final Logger log = LogManager.getLogger(AccountService.class);
     private final AccountRepository accountRepository;
     private final OperationsRepository operationsRepository;
 
@@ -47,13 +46,11 @@ public class OperationsService {
                 if (dateStop == null) {
                     dateStop = 9999999999999L;
                 }
-
                 if (dateStart > dateStop) {
                     operationResponseError.setDescription("Некорректно задан временной диапазон!");
                     operationListResponses.add(operationResponseError);
                     return operationListResponses;
                 }
-
                 List<OperationsEntity> operationsEntities = operationsRepository.findAllByIdAccountAndDataTimeStampBetweenOrderByDataTimeStamp(
                         accountRepository.findById(id).get(), dateStart, dateStop);
 

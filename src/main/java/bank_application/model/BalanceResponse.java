@@ -31,4 +31,6 @@ public class BalanceResponse {
     public BalanceResponse(BigDecimal value) {
         this.value = value;
     }
+    public BalanceResponse() {
+    }
 }

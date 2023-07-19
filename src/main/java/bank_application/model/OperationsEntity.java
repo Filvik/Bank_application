@@ -18,22 +18,29 @@ public class OperationsEntity {
 
     @Schema(description = "Идентификатор для Account")
     @ManyToOne
-    @JoinColumn(name = "ID_ACCOUNT", foreignKey = @ForeignKey(name = "FK_1"))
+    @JoinColumn(name = "ID_ACCOUNT", foreignKey = @ForeignKey(name = "FK_1"), nullable = false)
     private AccountEntity idAccount;
 
     @Schema(description = "Идентификатор для TypeOperation")
     @ManyToOne
-    @JoinColumn(name = "ID_TYPE_OPERATION", foreignKey = @ForeignKey(name = "FK_2"))
+    @JoinColumn(name = "ID_TYPE_OPERATION", foreignKey = @ForeignKey(name = "FK_2"), nullable = false)
     private TypeOperationEntity typeOperationEntity;
 
-    @Column(name = "SUM")
+    @Column(name = "SUM", nullable = false)
     @Schema(description = "Сумма")
     private BigDecimal sum;
 
-    @Column(name = "DATA")
+    @Column(name = "DATA", nullable = false)
     @Schema(description = "Дата")
     private long dataTimeStamp;
 
     public OperationsEntity() {
+    }
+
+    public OperationsEntity(AccountEntity idAccount, TypeOperationEntity typeOperationEntity, BigDecimal sum, long dataTimeStamp) {
+        this.idAccount = idAccount;
+        this.typeOperationEntity = typeOperationEntity;
+        this.sum = sum;
+        this.dataTimeStamp = dataTimeStamp;
     }
 }

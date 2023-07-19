@@ -12,16 +12,16 @@ import java.math.BigDecimal;
 @JsonInclude(JsonInclude.Include.NON_DEFAULT)
 public class OperationListResponse {
 
-    @JsonProperty("DATA")
+    @JsonProperty("data")
     @Schema(description = "Дата операции")
     private long dateTimeStamp;
-    @JsonProperty("TYPE_OPERATION")
+    @JsonProperty("type_operation")
     @Schema(description = "Тип операции")
     private int typeOperation;
-    @JsonProperty("SUM")
+    @JsonProperty("sum")
     @Schema(description = "Сумма операции")
     private BigDecimal sum;
-    @JsonProperty("DESCRIPTION")
+    @JsonProperty("description")
     @Schema(description = "Ошибка при вводе ID пользователя")
     private String description;
 

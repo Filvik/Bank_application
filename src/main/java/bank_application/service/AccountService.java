@@ -10,19 +10,18 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.math.BigDecimal;
 import java.util.concurrent.atomic.AtomicReference;
 
 @Service
-public class BankService {
-    private static final Logger log = LogManager.getLogger(BankService.class);
+public class AccountService {
+    private static final Logger log = LogManager.getLogger(AccountService.class);
+    private static final int OPERATION_TAKE = 1;
+    private static final int OPERATION_PUT = 2;
     private final AccountRepository accountRepository;
     private final OperationsRepository operationsRepository;
-    AtomicReference<BalanceResponse> balanceResponse = new AtomicReference<>();
 
-
-    public BankService(AccountRepository accountRepository, OperationsRepository operationsRepository) {
+    public AccountService(AccountRepository accountRepository, OperationsRepository operationsRepository) {
         this.accountRepository = accountRepository;
         this.operationsRepository = operationsRepository;
         log.info("Проинициализированы экземпляры класса AccountRepository и OperationsRepository в классе BankService.");
@@ -37,6 +36,7 @@ public class BankService {
      */
     public BalanceResponse howMuchMoney(long id) {
 
+        AtomicReference<BalanceResponse> balanceResponse = new AtomicReference<>();
         try {
             accountRepository.findById(id).ifPresentOrElse(fid ->
                             balanceResponse.set(new BalanceResponse(fid.getBalance(), fid.getTypeCurrency())),
@@ -56,39 +56,26 @@ public class BankService {
      * @param sum Запрашиваемая сумма.
      * @return Объект класса BalanceResponse.
      */
-    @Transactional
     public BalanceResponse takeMoney(long id, BigDecimal sum) {
 
         if (sum.compareTo(BigDecimal.valueOf(0)) <= 0) {
             return new BalanceResponse(0, "Некорректное значение запрошенной суммы!");
         }
+        BalanceResponse balanceResponse = new BalanceResponse();
         try {
-            accountRepository.findById(id).ifPresentOrElse(fid -> {
-                        if (sum.compareTo(fid.getBalance()) <= 0) {
-                            fid.setBalance(fid.getBalance().subtract(sum));
-                            accountRepository.save(fid);
-                            accountRepository.flush();
-                            balanceResponse.set(new BalanceResponse(BigDecimal.valueOf(1)));
+            accountRepository.findById(id).ifPresentOrElse(accountEntity -> {
 
-                            OperationsEntity operationsEntity = new OperationsEntity();
-                            TypeOperationEntity typeOperationEntity = new TypeOperationEntity();
-                            typeOperationEntity.setId(2);
-                            AccountEntity accountEntity = new AccountEntity();
-                            accountEntity.setId(id);
-
-                            operationsEntity.setTypeOperationEntity(typeOperationEntity);
-                            operationsEntity.setIdAccount(accountEntity);
-                            operationsEntity.setSum(sum);
-                            operationsEntity.setDataTimeStamp(new java.util.Date().getTime());
-                            operationsRepository.save(operationsEntity);
-                            operationsRepository.flush();
-
+                        if (sum.compareTo(accountEntity.getBalance()) <= 0) {
+                                operation(accountEntity, sum, OPERATION_PUT, balanceResponse);
                         } else {
-                            balanceResponse.set(new BalanceResponse(0, "Недостаточно средств на счёте!"));
-                        }
-                    },
-                    () -> balanceResponse.set(new BalanceResponse(0, "Отсутствует данный пользователь!")));
-            return balanceResponse.get();
+                            balanceResponse.setValue(BigDecimal.valueOf(0));
+                            balanceResponse.setDescription("Недостаточно средств на счёте!");
+                        }},
+                    () -> {
+                        balanceResponse.setValue(BigDecimal.valueOf(0));
+                        balanceResponse.setDescription("Отсутствует данный пользователь!");
+                    });
+            return balanceResponse;
         } catch (Exception exception) {
             log.error("Внутренняя ошибка сервера: " + exception);
             return new BalanceResponse(0, "Внутренняя ошибка сервера!");
@@ -103,37 +90,51 @@ public class BankService {
      * @param sum Сумма пополнения.
      * @return Объект класса BalanceResponse.
      */
-    @Transactional
     public BalanceResponse putMoney(long id, BigDecimal sum) {
 
         if (sum.compareTo(BigDecimal.valueOf(0)) <= 0) {
             return new BalanceResponse(0, "Некорректное значение суммы пополнения!");
         }
+        BalanceResponse balanceResponse = new BalanceResponse();
         try {
-            accountRepository.findById(id).ifPresentOrElse(fid -> {
-                        fid.setBalance(fid.getBalance().add(sum));
-                        accountRepository.save(fid);
-                        accountRepository.flush();
-                        balanceResponse.set(new BalanceResponse(BigDecimal.valueOf(1)));
-
-                        OperationsEntity operationsEntity = new OperationsEntity();
-                        TypeOperationEntity typeOperationEntity = new TypeOperationEntity();
-                        typeOperationEntity.setId(1);
-                        AccountEntity accountEntity = new AccountEntity();
-                        accountEntity.setId(id);
-
-                        operationsEntity.setTypeOperationEntity(typeOperationEntity);
-                        operationsEntity.setIdAccount(accountEntity);
-                        operationsEntity.setSum(sum);
-                        operationsEntity.setDataTimeStamp(new java.util.Date().getTime());
-                        operationsRepository.save(operationsEntity);
-                        operationsRepository.flush();
+            accountRepository.findById(id).ifPresentOrElse(accountEntity -> {
+                            operation(accountEntity, sum, OPERATION_TAKE, balanceResponse);
                     },
-                    () -> balanceResponse.set(new BalanceResponse(0, "Отсутствует данный пользователь!")));
-            return balanceResponse.get();
+                    () -> {
+                        balanceResponse.setValue(BigDecimal.valueOf(0));
+                        balanceResponse.setDescription("Отсутствует данный пользователь!");
+                    });
+            return balanceResponse;
         } catch (Exception exception) {
             log.error("Внутренняя ошибка сервера: " + exception);
             return new BalanceResponse(0, "Внутренняя ошибка сервера!");
         }
+    }
+
+    /**
+     * Метод выполняет операцию изменения баланса в таблице Account и создание нового объекта в таблице Operations.
+     *
+     * @param accountEntity  Объект класса AccountEntity.
+     * @param operationType  Тип операции.
+     * @param sum Сумма пополнения.
+     */
+    @Transactional
+    public void operation(AccountEntity accountEntity, BigDecimal sum, int operationType, BalanceResponse balanceResponse){
+
+        if (operationType == OPERATION_TAKE) {
+            accountEntity.setBalance(accountEntity.getBalance().add(sum));
+        }
+        if (operationType == OPERATION_PUT) {
+            accountEntity.setBalance(accountEntity.getBalance().subtract(sum));
+        }
+        accountRepository.saveAndFlush(accountEntity);
+        balanceResponse.setValue(BigDecimal.valueOf(1));
+
+        TypeOperationEntity typeOperationEntity = new TypeOperationEntity();
+        typeOperationEntity.setId(operationType);
+
+        OperationsEntity operationsEntity = new OperationsEntity(accountEntity, typeOperationEntity,
+                sum, new java.util.Date().getTime());
+        operationsRepository.saveAndFlush(operationsEntity);
     }
 }

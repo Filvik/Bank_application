@@ -11,11 +11,11 @@ import lombok.Data;
 public class TypeOperationEntity {
 
     @Id
-    @Column(name = "ID")
+    @Column(name = "ID", nullable = false)
     @Schema(description = "Идентификатор операции")
     private int id;
 
-    @Column(name = "DESCRIPTION")
+    @Column(name = "DESCRIPTION", nullable = false)
     @Schema(description = "Название операции")
     private String description;
 
