@@ -1,4 +1,4 @@
-package integrationTest;
+package bank_application.integrationTest;
 
 import bank_application.BankApplication;
 import bank_application.model.AccountEntity;
