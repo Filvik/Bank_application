@@ -3,12 +3,15 @@ package bank_application.model;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.math.BigDecimal;
 
 @Data
 @Entity
 @Table(name = "OPERATIONS")
 @Schema(name = "Операции")
+@NoArgsConstructor
 public class OperationsEntity {
 
     @Id
@@ -34,9 +37,18 @@ public class OperationsEntity {
     @Schema(description = "Дата")
     private long dataTimeStamp;
 
-    public OperationsEntity() {
-    }
+    @Schema(description = "Идентификатор для AccountRecipient")
+    @ManyToOne
+        @JoinColumn(name = "ID_ACCOUNT_RECIPIENT", foreignKey = @ForeignKey(name = "FK_3"))
+    private AccountEntity idAccountRecipient;
 
+    public OperationsEntity(AccountEntity idAccount, AccountEntity idRecipient, TypeOperationEntity typeOperationEntity, BigDecimal sum, long dataTimeStamp) {
+        this.idAccount = idAccount;
+        this.typeOperationEntity = typeOperationEntity;
+        this.sum = sum;
+        this.dataTimeStamp = dataTimeStamp;
+        this.idAccountRecipient = idRecipient;
+    }
     public OperationsEntity(AccountEntity idAccount, TypeOperationEntity typeOperationEntity, BigDecimal sum, long dataTimeStamp) {
         this.idAccount = idAccount;
         this.typeOperationEntity = typeOperationEntity;
