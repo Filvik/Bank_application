@@ -38,14 +38,16 @@ public class TransferService {
     public BalanceResponse transferMoney(long idSender, long idRecipient, BigDecimal sum) {
 
         BalanceResponse balanceResponse = new BalanceResponse();
-        AccountEntity accountEntityForRecipient = accountRepository.findById(idRecipient).get();
 
         if (sum.compareTo(BigDecimal.valueOf(0)) > 0) {
             if (idSender != idRecipient) {
                 try {
                     accountRepository.findById(idSender).ifPresentOrElse(idS -> {
                                 if (accountRepository.findById(idRecipient).isPresent()) {
-                                    if (Objects.equals(accountRepository.findById(idSender).get().getTypeCurrency(),
+
+                                    AccountEntity accountEntityForRecipient = accountRepository.findById(idRecipient).get();
+
+                                    if (Objects.equals(idS.getTypeCurrency(),
                                             accountEntityForRecipient.getTypeCurrency())) {
                                         operation(idS, accountEntityForRecipient, sum, balanceResponse);
                                     } else {

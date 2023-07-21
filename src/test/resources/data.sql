@@ -6,7 +6,7 @@ DELETE
 
 INSERT INTO public.account(
 	    id, balance, type_currency)
-	    VALUES (1000, 1200, 'usdt');
+	    VALUES (1000, 1000, 'usdt'),(2000, 2000, 'usdt'),(3000, 3000, 'rub');
 
 INSERT INTO public.operations(
         data, id_account, id_type_operation, sum)

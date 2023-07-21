@@ -28,6 +28,7 @@ class AccountServiceTest {
 
     @Test
     void operation() {
+
         //Тест с ID который имеется в базе.
         AccountEntity accountEntity = new AccountEntity();
         BalanceResponse balanceResponse = new BalanceResponse();
