@@ -25,7 +25,8 @@
     <ul>
        <li>Логирование с использованием log4j2</li>
           <p>Настройки логирование находятся в файле <b>log4j2-spring.xml</b>.
-          Сами логи пишутся в файл <b>application.log</b>, который лежит в папке <code>logs</code>.</p>
+          Сами логи пишутся в файл <b>application.log</b>, который лежит в папке <code>logs</code>. 
+Получение файла с логами возможно по адресу <b>http://&lt;адрес сервера&gt;:8080/api/logs</b>.</p>
        <li><a href="https://swagger.io/solutions/api-documentation/">Swagger</a></li>
             <p>Фреймворк Swagger позволяет разработчикам создавать интерактивную, удобочитаемую для машин и человека документацию по API.
             Swagger доступен при запущенном приложении по адресу:<a href="http://localhost:8080/swagger-ui/index.html#/"> http://localhost:8080/swagger-ui/index.html#/</a>.</p>
